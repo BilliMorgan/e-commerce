@@ -3,11 +3,10 @@ import { createStore, combineReducers } from "redux"
 import { Provider } from "react-redux"
 import productsReducer from "./store/reducers/products"
 import cartReducer from "./store/reducers/cart"
-// import ShopNavigator from "./navigation/ShopNavigator"
 import AppNavigator from "./navigation/AppNavigator"
-import AppLoading from "expo-app-loading" // expo install expo-app-loading
+import AppLoading from "expo-app-loading"
 import { useFonts } from "expo-font"
-// import { composeWithDevTools } from "redux-devtools-extension" - //for debuging redux
+// import { composeWithDevTools } from "redux-devtools-extension" - //for debuging redux in dev mode
 
 const rootReducer = combineReducers({
   products: productsReducer,
