@@ -1,5 +1,5 @@
 import React from "react"
-import { FlatList, Text } from "react-native"
+import { FlatList, Platform} from "react-native"
 import { useSelector, useDispatch } from "react-redux"
 import ProductItem from "../../components/shop/ProductItem"
 import * as cartActions from "../../store/actions/cart"
@@ -38,7 +38,7 @@ export const screenOptions = (navData) => {
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
-          title="menu"
+          title="Menu"
           iconName={Platform.OS === "android" ? "md-menu" : "ios-menu"}
           onPress={() => {
             navData.navigation.toggleDrawer()
