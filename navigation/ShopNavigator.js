@@ -14,6 +14,9 @@ import CartScreen, {
 } from "../screens/shop/CartScreen"
 import OrdersScreen, {screenOptions as orderScreenOptions} from "../screens/shop/OrdersScreen"
 import UserProductsScreen, {screenOptions as userProductsScreenOptions} from "../screens/user/UserProductsScreen"
+import EditProductScreen, {
+  screenOptions as editProductScreenOptions,
+} from "../screens/user/EditProductScreen"
 import Colors from "../constants/Colors"
 import { Ionicons } from "@expo/vector-icons"
 import { useDispatch } from "react-redux"
@@ -64,12 +67,12 @@ const AdminNavigator = () => {
         component={UserProductsScreen}
         options={userProductsScreenOptions}
       />
-      {/* <AdminStackNavigator.Screen
-        name="ProductDetail"
-        component={ProductDetailScreen}
-        options={productDetialScreenOptions}
-      />
       <AdminStackNavigator.Screen
+        name="EditProduct"
+        component={EditProductScreen}
+        options={editProductScreenOptions}
+      />
+      {/* <AdminStackNavigator.Screen
         name="Cart"
         component={CartScreen}
         options={cartScreenOptions}
