@@ -7,6 +7,7 @@ import {
   View,
   ScrollView,
   Platform,
+
 } from "react-native"
 import { HeaderButtons, Item } from "react-navigation-header-buttons"
 import HeaderButton from "../../components/UI/HeaderButton"
@@ -28,6 +29,8 @@ const EditProductScreen = (props) => {
   const [description, setDescription] = useState(
     editedProduct ? editedProduct.description : ""
   )
+
+
   const submitHandler = useCallback(() => {
     if (editedProduct) {
       dispatch(
@@ -38,6 +41,7 @@ const EditProductScreen = (props) => {
         productActioins.createProduct(title, description, imageUrl, +price)
       )
     }
+      props.navigation.goBack()
   }, [dispatch, prodId, title, description, imageUrl, price])
   useEffect(() => {
     props.navigation.setOptions({
