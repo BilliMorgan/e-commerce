@@ -24,7 +24,7 @@ const CartScreen = () => {
       a.productId > b.productId ? 1 : -1
     )
   })
-  console.log(cartItems)
+
   const dispatch = useDispatch()
   return (
     <View style={styles.screen}>
