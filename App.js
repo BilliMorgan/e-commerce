@@ -4,6 +4,7 @@ import { Provider } from "react-redux"
 import productsReducer from "./store/reducers/products"
 import cartReducer from "./store/reducers/cart"
 import ordersReducer from "./store/reducers/orders"
+import authReducer from './store/reducers/auth'
 import AppNavigator from "./navigation/AppNavigator"
 import AppLoading from "expo-app-loading"
 import { useFonts } from "expo-font"
@@ -13,7 +14,8 @@ import ReduxThunk from 'redux-thunk'
 const rootReducer = combineReducers({
   products: productsReducer,
   cart: cartReducer,
-  orders: ordersReducer
+  orders: ordersReducer,
+  auth: authReducer,
 })
 ///!!!!REMOVE composeWithDevTools for production!!!!!
 const store = createStore(

@@ -16,6 +16,7 @@ import Input from "../../components/UI/Input"
 import Colors from "../../constants/Colors"
 
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE"
+
 const formReducer = (state, action) => {
   if (action.type === FORM_INPUT_UPDATE) {
     const updatedValues = {
@@ -64,11 +65,11 @@ const EditProductScreen = (props) => {
     },
     formIsValid: editedProduct ? true : false,
   })
-useEffect(()=>{
-  if(error){
-    Alert.alert('An error occurred', error, [{text: 'OK'}])
-  }
-}, [error])
+  useEffect(() => {
+    if (error) {
+      Alert.alert("An error occurred", error, [{ text: "OK" }])
+    }
+  }, [error])
   const submitHandler = useCallback(async () => {
     if (!formState.formIsValid) {
       Alert.alert("Wrong input!", "Please, check the errors in the form.", [
@@ -98,7 +99,7 @@ useEffect(()=>{
           )
         )
       }
-    props.navigation.goBack()
+      props.navigation.goBack()
     } catch (err) {
       setError(err.message)
     }

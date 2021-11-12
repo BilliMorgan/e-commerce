@@ -12,14 +12,20 @@ import ProductDetailScreen, {
 import CartScreen, {
   screenOptions as cartScreenOptions,
 } from "../screens/shop/CartScreen"
-import OrdersScreen, {screenOptions as orderScreenOptions} from "../screens/shop/OrdersScreen"
-import UserProductsScreen, {screenOptions as userProductsScreenOptions} from "../screens/user/UserProductsScreen"
+import OrdersScreen, {
+  screenOptions as orderScreenOptions,
+} from "../screens/shop/OrdersScreen"
+import UserProductsScreen, {
+  screenOptions as userProductsScreenOptions,
+} from "../screens/user/UserProductsScreen"
 import EditProductScreen, {
   screenOptions as editProductScreenOptions,
 } from "../screens/user/EditProductScreen"
+
 import Colors from "../constants/Colors"
 import { Ionicons } from "@expo/vector-icons"
 import { useDispatch } from "react-redux"
+import AuthScreen, {screenOptions as authScreenOptions } from "../screens/user/AuthScreen"
 
 const defaultNavOptions = {
   headerStyle: {
@@ -34,7 +40,6 @@ const defaultNavOptions = {
   headerTintColor: Platform.OS === "android" ? "white" : Colors.primary,
 }
 
-
 const ProductsStackNavigator = createStackNavigator()
 const ProductsNavigator = () => {
   return (
@@ -43,17 +48,17 @@ const ProductsNavigator = () => {
         name="ProductsOverview"
         component={ProductsOverviewScreen}
         options={productOverviewOptions}
-        />
+      />
       <ProductsStackNavigator.Screen
         name="ProductDetail"
         component={ProductDetailScreen}
         options={productDetialScreenOptions}
-        />
+      />
       <ProductsStackNavigator.Screen
         name="Cart"
         component={CartScreen}
         options={cartScreenOptions}
-        />
+      />
     </ProductsStackNavigator.Navigator>
   )
 }
@@ -89,8 +94,17 @@ const OrdersNavigator = () => {
         name="OrdersOverview"
         component={OrdersScreen}
         options={orderScreenOptions}
-        />
+      />
     </OrdersStackNavigator.Navigator>
+  )
+}
+
+const AuthStackNavigator = createStackNavigator()
+export const AuthNavigator = () => {
+  return (
+    <AuthStackNavigator.Navigator screenOptions={defaultNavOptions}>
+      <AuthStackNavigator.Screen name='Auth' component={AuthScreen} options={authScreenOptions}/>
+    </AuthStackNavigator.Navigator>
   )
 }
 
